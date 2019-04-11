@@ -1,0 +1,81 @@
+<!--
+    comments  =  het uitschakelen van het stukje code zonder het weg te hoeven halen
+        html 
+        javascript    //   1 regel uit te commentarieren
+                      /*    meerdere regels
+                      */
+        configuratiebestanden #
+
+    declareren  =  Het aanmaken van een nieuwe variabele
+        javascript    typt meteen de naam
+                        eenVarNaam;
+                        var eenTweedeVarNaam;
+
+    scope van de variabele
+        globale variabele
+        vs
+        locale variabele
+
+    functie heeft een return mogelijkheid
+        kan niets returnen OF kan iets returnen
+    
+    returntype een functie kan iets returnen. Dit geeft de functie dan terug. 
+    INDIEN een functie IETS returned, DAN kan de aanroep van de functie vervangen worden door datgene dat hij returned
+
+    object
+        Het object wordt in javascript geinstantieerd door het statement
+        var tuin = {};  maakt het project
+        Je kunt het object vullen met eigenschappen EN waarden.
+        var tuin = {
+            diepte : 14;
+            betegeld : true;
+        }
+        Je kunt de eigenschappen hun waarden vullen en uitleze mbv tuin.diepte en tuin.betegeld
+        Een object kan je meegeven als object en/of gebruiken als parameter
+    
+    array 
+
+    hallo HaLlo case-sensitive
+
+
+
+
+-->
+<html>
+<head>
+   <style>
+
+   </style>
+
+   <script>
+       
+        function startfunctie(){
+            var elem = document.getElementById("uitkomst");
+            var lijstje = ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"];
+            var invul = document.getElementById("vrij");
+//            alert(invul.value);
+//            printenOpScherm(lijstje[2]);
+                        
+
+           for(var y=0 ; y < lijstje.length ; y++){
+               if(lijstje[y] == invul.value){
+                   printenOpScherm("--");
+               }
+               else{
+                printenOpScherm(lijstje[y]);
+               }
+           }
+        }
+        function printenOpScherm(tePrintenTekst){
+            var elem = document.getElementById("uitkomst");
+            elem.innerHTML = elem.innerHTML + tePrintenTekst + "<br>";
+        }
+
+   </script>
+</head>
+<body>
+    Welke dagen wil je vrij? <input type="text" id=vrij> 
+    <button onclick="startfunctie()" > Vrij vragen </button>
+    <div id="uitkomst"> </div>
+</body>
+</html>
