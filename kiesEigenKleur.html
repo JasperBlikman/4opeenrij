@@ -1,0 +1,117 @@
+<html>
+<head>
+  <style>
+      body{
+          text-align: center;
+      }
+      .vieropeenrij{
+          display: inline-block;
+          border-collapse: collapse;
+          background-color: blue;
+      }
+      .vieropeenrij td{
+          border: 5px solid blue;
+            width: 70px;
+            height: 70px;
+      }
+      .circle{
+          background: white;
+          border-radius: 100%;
+          height: 70px;
+          width: 70px;
+          position: relative;
+      }
+      .plaatje{
+          width: 70px;
+          height: 70px;
+          border-radius: 100%;
+      }
+      #zwartecirkel{
+          background-color: black;
+      }
+      #rodecirkel{
+          background-color: red;
+      }
+      #groenecirkel{
+          background-color: green;
+      }
+      #rozecirkel{
+          background-color: pink;
+      }
+      #paarsecirkel{
+          background-color: purple;
+      }
+      #gelecirkel{
+          background-color: yellow;
+      }
+      #oranjecirkel{
+          background-color: orange;
+      }
+  </style>
+  <script>
+      window.onload = function(){
+        document.getElementById("uitkomstSpeler1").innerHTML = localStorage.getItem("SpelerNaam") + " (Rood)";
+        document.getElementById("uitkomstSpeler2").innerHTML = localStorage.getItem("SpelerNaam2") + " (Geel)";
+      }
+        var speler1kleur;
+        var speler2kleur;
+        function kleurKiezen(kleurtje){
+            alert(kleurtje);
+            speler1kleur = kleurtje;
+            //return kleurtje;
+        }
+        
+
+      var clicks = 0;
+        function telKlik(){
+            clicks ++;
+            return clicks;
+        }
+        function wisselSpeler(){
+            document.getElementById("aantalKlikken").innerHTML = telKlik();
+            if(clicks % 2 == 0) {
+                return "yellow";
+            }   
+            else{
+                return "red";
+            }
+        }
+  
+        
+  </script>
+</head>
+<body>
+<h1>Vier op een rij</h1>
+
+    <p>Kies je kleur:</p>
+    <input type="radio" name="colors" id="speler1kleurtje">Speler 1
+    <input type="radio" name="colors" id="speler2kleurtje">Speler 2
+    <button onclick="kleurKiezen()">OK</button>
+    <br>
+    <table class="vieropeenrij">
+            <tr>
+                <td><div class="circle" id="zwartecirkel" onclick = "kleurKiezen('black')"></div></td>
+                <td><div class="circle" id="groenecirkel" onclick = "kleurKiezen('green')"></div></td>
+                <td><div class="circle" id="rodecirkel" onclick = "kleurKiezen('red')"></div></td>
+                <td><div class="circle" id="gelecirkel" onclick = "kleurKiezen('yellow')"></div></td>
+                <td><div class="circle" id="oranjecirkel" onclick = "kleurKiezen('orange')"></div></td>
+                <td><div class="circle" id="rozecirkel" onclick = "kleurKiezen('pink')"></div></td>
+                <td><div class="circle" id="paarsecirkel" onclick = "kleurKiezen('purple')"></div></td>
+            </tr>
+        </table>
+        <br />
+ 
+
+
+        <p>Style je steen!</p>
+    <div id="plaatjesbank">
+        <img class="plaatje" id="plaatje1" src="thumbnails\giraf.jpg" alt="giraf">
+        <img class="plaatje" id="plaatje2" src="thumbnails\bij.jpg" alt="bij">
+        <img class="plaatje" id="plaatje3" src="thumbnails\aap.jpg" alt="aap">
+        <img class="plaatje" id="plaatje4" src="thumbnails\bloem.jpg" alt="bloem">
+        <img class="plaatje" id="plaatje5" src="thumbnails\gras.jpg" alt="gras">
+        <img class="plaatje" id="plaatje6" src="thumbnails\insect.jpg" alt="insect">
+        <img class="plaatje" id="plaatje7" src="thumbnails\steen.jpg" alt="steen">
+    </div>
+</body>
+</html>
